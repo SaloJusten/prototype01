@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declaração de Amor e Pedido de Namoro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Declaração de Amor e Pedido de Namoro</h1>
+  <div id="love-letter">
+    <p><span id="heart">&#10084;</span> Meu amor,</p>
+    <p>Quero te dizer que você é a pessoa mais especial da minha vida. Desde que te conheci, meu coração bate mais forte e minha vida ganhou um novo sentido.</p>
+    <p>Você me completa de uma forma que eu nunca imaginei ser possível. Estou profundamente apaixonado por você e quero passar o resto da minha vida ao seu lado.</p>
+    <p>Você aceita namorar comigo?</p>
+    <button class="option" onclick="accept()">Sim</button>
+    <button class="option" id="noButton" onmouseover="moveButton()" onclick="reject()">Não</button>
+  </div>
+
+  <div id="response">
+    <p><span id="heart">&#10084;</span> Sim, eu aceito namorar com você! <span id="heart">&#10084;</span></p>
+    <p>Obrigado por aceitar! Você é a pessoa mais especial para mim e eu prometo te fazer feliz todos os dias.</p>
+  </div>
+
+  <div id="romantic-text" style="display: none;">
+    <p>Nós somos uma espécie em extinção, você e eu. Nós amantes da paixão. Nós devotos do amor, da beleza e do romance.</p>
+    <p>"Vão embora!" - Nos dizem.</p>
+    <p>"E levem suas histórias vazias de amor e paixão com vocês."</p>
+    <p>Mal há espaço para nós agora, não com todos os desiludidos e os corações partidos. Não nesta era crescente de desconfiança e desapego, onde a segurança emocional supera a entrega apaixonada. Onde a superficialidade é exaltada sobre a profundidade dos sentimentos e a conexão verdadeira e pura. A evidência está em toda parte... você e eu estamos sendo excluídos, deixados de lado e caçados a cada esquina.</p>
+    <p>E ainda há esperança. Há um refúgio seguro, um lugar onde somos livres para desafiar convenções, desafiar as expectativas e viver nosso amor apaixonado e romântico plenamente. Não é um jardim em Paris, ou uma praia deserta no Caribe. Nem mesmo é um lugar físico, na verdade. É mais do que isso! É uma celebração mútua do amor, da conexão, da entrega, da ternura, da beleza.</p>
+    <p>É O ÚLTIMO bastião do romantismo, e está bem ali, nos nossos corações.</p>
+  </div>
+
+  <button id="prosseguir" class="option" onclick="showRomanticText()" style="display: none; margin: 20px auto;">Prosseguir</button>
+
+  <script src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8e0e6; /* Rosa claro */
+      text-align: center;
+    }
+    h1 {
+      color: #ff1493; /* Rosa vibrante */
+    }
+    #love-letter {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #love-letter p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    #heart {
+      color: #ff1493; /* Rosa vibrante */
+      font-size: 48px;
+    }
+    #response {
+      display: none;
+    }
+    .option {
+      padding: 10px 20px;
+      background-color: #ff1493; /* Rosa vibrante */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    #romantic-text {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  </style>
+  <script>
+    function accept() {
+      document.getElementById("love-letter").style.display = "none";
+      document.getElementById("response").style.display = "block";
+      document.getElementById("prosseguir").style.display = "block";
+    }
+
+    function reject() {
+      var noButton = document.querySelector(".option:nth-child(2)");
+      noButton.style.position = "absolute";
+      noButton.style.left = Math.random() * (window.innerWidth - noButton.offsetWidth) + "px";
+      noButton.style.top = Math.random() * (window.innerHeight - noButton.offsetHeight) + "px";
+    }
+
+    function moveButton() {
+      var noButton = document.getElementById("noButton");
+      noButton.style.position = "absolute";
+      noButton.style.left = Math.random() * (window.innerWidth - noButton.offsetWidth) + "px";
+      noButton.style.top = Math.random() * (window.innerHeight - noButton.offsetHeight) + "px";
+    }
+
+    function showRomanticText() {
+      document.getElementById("romantic-text").style.display = "block";
+      document.getElementById("prosseguir").style.display = "none";
+    }
+  </script>
+</body>
+</html>
